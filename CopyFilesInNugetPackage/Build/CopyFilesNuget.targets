@@ -1,0 +1,10 @@
+<Project>
+  <ItemGroup>
+    <TestFilesFilesToCopy Include="$(MSBuildThisFileDirectory)../TestFiles/**/*.*"/>
+    <MarkdownFilesToCopy Include="$(MSBuildThisFileDirectory)../Markdown/*.*"/>
+  </ItemGroup>
+  <Target Name="CopyContent" BeforeTargets="Build">
+    <Copy SourceFiles="@(TestFilesFilesToCopy)" DestinationFolder="$(ProjectDir)TestFiles/%(RecursiveDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(MarkdownFilesToCopy)" DestinationFolder="$(ProjectDir)Markdown/%(RecursiveDir)" SkipUnchangedFiles="true" />
+  </Target>
+</Project>

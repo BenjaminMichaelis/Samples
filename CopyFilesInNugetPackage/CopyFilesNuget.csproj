@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.Build.NoTargets/3.7.0">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <NoWarn>NU5128</NoWarn>
+    <IsPackable>true</IsPackable>
+    <VersionPrefix>1.1.0</VersionPrefix>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="TestFiles/*.json" Pack="true" PackagePath="TestFiles" />
+    <None Include="TestFiles/**/*.html" Pack="true" PackagePath="TestFiles" />
+    <None Include="Markdown/*.md" Pack="true" PackagePath="Markdown" />
+    <None Include="Build/CopyFilesNuget.targets" Pack="true" PackagePath="build\CopyFilesNuget.targets"/>
+  </ItemGroup>
+
+</Project>
